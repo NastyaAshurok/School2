@@ -36,5 +36,17 @@ public class MainClass {
 
         school.addFloor(new Classroom.Library());
         System.out.println("Total money for School Repairs: " + school.calculateMoney());
+
+        boolean isDiscount = true;
+        boolean noDiscount = false;
+        school.buyTicket("Bogdanovicha museum", 10, noDiscount);
+        school.buyFood("Potato with chicken",9, "#15");
+
+        school.buyTicket("Kupaly museum", 13, isDiscount);
+        school.buyFood("Borsch",5,"#5");
+
+        school.buyTicket("Opera", 15, isDiscount);
+
+        school.moneyForGoods();
     }
 }

@@ -2,10 +2,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class School implements MoneyCalculator{
-   // public String calculateMoney;
     String name;
     List<MoneyCalculator> floors;
-    //Classroom.Library library;
+
+    GoodsStore food; // food from the buffet for 1 Classroom
+    GoodsStore ticket; // ticket to the museum for 1 Classroom
+
 
     public School(String name) {
 
@@ -24,5 +26,17 @@ public class School implements MoneyCalculator{
             money = money + floor.calculateMoney();
         }
         return money;
+    }
+
+    public Good buyTicket(String museum, int count, boolean isDiscount) {
+        return ticket.buy(museum,count,isDiscount);
+    }
+
+    public Good buyFood(String dish, int count, String diet) {
+       return food.buy(dish,count,diet);
+    }
+
+    public double moneyForGoods() {
+        return food.moneyForGoods() + ticket.moneyForGoods();
     }
 }
